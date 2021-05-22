@@ -21,10 +21,10 @@ struct ContentView: View {
     @State var round = 1
     
     var sliderValueRounded: Int {
-        Int(self.sliderValue.rounded())
+        Int(sliderValue.rounded())
     }
     var sliderTargetDifference: Int {
-        abs(self.sliderValueRounded - self.target)
+        abs(sliderValueRounded - target)
     }
     var body: some View {
         VStack{
@@ -52,7 +52,7 @@ struct ContentView: View {
             //State for alert
             .alert(isPresented: self.$alertIsVisible){
                 Alert(title: Text(alertTitle()),
-                      message: Text(self.scoringMessage()),
+                      message: Text(scoringMessage()),
                       dismissButton: .default(Text("Awesome!")){
                         self.startNewRound()
                     }
@@ -69,16 +69,17 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score:")
-                Text("\(self.score)")
+                Text("\(score)")
                 Spacer()
                 Text("Round:")
-                Text("\(self.round)")
+                Text("\(round)")
                 Spacer()
                 Button(action:{}){
                     Text("Inform")
                 }
             }.padding(.bottom, 20)
         }//end of vstack
+            .onAppear() { self.startNewGame() }
     }// end of body
     
     //Methods
@@ -96,9 +97,9 @@ struct ContentView: View {
     }
     
     func scoringMessage() -> String {
-        return "The slider's value is \(Int(self.sliderValueRounded)).\n" +
-        "The target value is \(self.target).\n" +
-        "You scored \(self.pointsForCurrentRound()) points this round."
+        return "The slider's value is \(Int(sliderValueRounded)).\n" +
+        "The target value is \(target).\n" +
+        "You scored \(pointsForCurrentRound()) points this round."
     }
     
     func alertTitle() -> String {
@@ -118,18 +119,18 @@ struct ContentView: View {
     func startNewGame() {
         score = 0
         round = 1
-        self.resetSliderAndTarget()
+        resetSliderAndTarget()
     }
     
     func startNewRound() {
-        self.score = self.score + self.pointsForCurrentRound()
-        self.round += 1
-        self.resetSliderAndTarget()
+        score = score + pointsForCurrentRound()
+        round += 1
+        resetSliderAndTarget()
     }
     
     func resetSliderAndTarget() {
-        self.sliderValue = 50
-        self.target = Int.random(in: 1...100)
+        sliderValue = Double.random(in: 1...100)
+        target = Int.random(in: 1...100)
     }
 }//end of struct
 
