@@ -10,15 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        List {
-            Text("My name is")
-            Text("Hwang Dong Jun")
-            Text("everyone please")
-            Text("make a noise")
-            Text("yeah!!!")
-        } // end of List
-    }
-}
+        NavigationView {
+            List {
+                Text("My name is")
+                Text("Hwang Dong Jun")
+                Text("everyone please")
+                Text("make a noise")
+                Text("yeah!!!")
+            } // end of List
+            .navigationBarTitle("CheckList")
+        } //navigation end
+    } //body end
+} //contentview end
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
