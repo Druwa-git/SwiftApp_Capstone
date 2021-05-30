@@ -12,12 +12,29 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("My name is")
-                Text("Hwang Dong Jun")
-                Text("everyone please")
-                Text("make a noise")
-                Text("yeah!!!")
+                Section (header: Text("High priority")){
+                    Group {
+                        Text("Do Capstone Design 1 Homework")
+                        Text("Wash dishes")
+                        Text("Do Capstone Design 2 Homework")
+                        Text("Watch Lecture 11")
+                        Text("Hang Out With Girlfriends")
+                        Text("Watch Lecture 12")
+                    }
+                    Group {
+                        Text("Clean my room")
+                        Text("Study Machine Learning")
+                        Text("Call my friends")
+                        Text("Eat Dinner")
+                        Text("Watch Lecture 13")
+                    }
+                }
+                Section(header: Text("Low priority")){
+                    Text("Exercise (inline skate)")
+                    Text("Watch Moives")
+                }
             } // end of List
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("CheckList")
         } //navigation end
     } //body end
