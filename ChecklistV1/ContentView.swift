@@ -9,32 +9,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var checklistItems = ["Do Capstone Design 1 Homework", "Wash dishes", "Do Capstone Design 2 Homework", "Watch Lecture 11", "Hang Out With Girlfriends", "Watch Lecture 12"]
+    
     var body: some View {
         NavigationView {
             List {
-                Section (header: Text("High priority")){
-                    Group {
-                        Text("Do Capstone Design 1 Homework")
-                        Text("Wash dishes")
-                        Text("Do Capstone Design 2 Homework")
-                        Text("Watch Lecture 11")
-                        Text("Hang Out With Girlfriends")
-                        Text("Watch Lecture 12")
-                    }
-                    Group {
-                        Text("Clean my room")
-                        Text("Study Machine Learning")
-                        Text("Call my friends")
-                        Text("Eat Dinner")
-                        Text("Watch Lecture 13")
-                    }
-                }
-                Section(header: Text("Low priority")){
+                    Text(checklistItems[0])
+                        .onTapGesture {
+                            self.checklistItems[0] = "Take the Capstone 1 to the bed"
+                        }
+                    Text(checklistItems[1])
+                    Text(checklistItems[2])
+                    Text(checklistItems[3])
+                    Text(checklistItems[4])
+                    Text(checklistItems[5])
+                    /*Text("Clean my room")
+                    Text("Study Machine Learning")
+                    Text("Call my friends")
+                    Text("Eat Dinner")
+                    Text("Watch Lecture 13")
                     Text("Exercise (inline skate)")
-                    Text("Watch Moives")
-                }
+                    Text("Watch Moives")*/
             } // end of List
-            .listStyle(GroupedListStyle())
             .navigationBarTitle("CheckList")
         } //navigation end
     } //body end
