@@ -34,6 +34,16 @@ struct ContentView: View {
                         Spacer()
                         Text( checklistItems.isChecked ? "✔️" : "⬛️")
                     }
+                    .background(Color.white)
+                    .onTapGesture {
+                        if let matchingIndex = self.checklistItems.firstIndex(where: {
+                            $0.id == checklistItems.id
+                        }){
+                            self.checklistItems[matchingIndex].isChecked.toggle()
+                        }
+                        self.printChecklistContents()
+                        print("The user tapped a list view \(checklistItems.name).")
+                    }
                 } //end of foreach
                 .onDelete(perform: deleteListItem)
                 .onMove(perform: moveListItem)
