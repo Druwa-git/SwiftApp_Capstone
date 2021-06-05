@@ -14,6 +14,7 @@
 		3F6598CA26638956002F06AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6598C926638956002F06AF /* Preview Assets.xcassets */; };
 		3F6598CD26638956002F06AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6598CB26638956002F06AF /* LaunchScreen.storyboard */; };
 		3F6598D5266BEAB3002F06AF /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598D4266BEAB3002F06AF /* ChecklistItem.swift */; };
+		3F6598D7266BEB3A002F06AF /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598D6266BEB3A002F06AF /* Checklist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3F6598CC26638956002F06AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6598CE26638956002F06AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6598D4266BEAB3002F06AF /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		3F6598D6266BEB3A002F06AF /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3F6598CE26638956002F06AF /* Info.plist */,
 				3F6598C826638956002F06AF /* Preview Content */,
 				3F6598D4266BEAB3002F06AF /* ChecklistItem.swift */,
+				3F6598D6266BEB3A002F06AF /* Checklist.swift */,
 			);
 			path = ChecklistV1;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6598D7266BEB3A002F06AF /* Checklist.swift in Sources */,
 				3F6598C12663894D002F06AF /* AppDelegate.swift in Sources */,
 				3F6598C32663894D002F06AF /* SceneDelegate.swift in Sources */,
 				3F6598C52663894D002F06AF /* ChecklistView.swift in Sources */,

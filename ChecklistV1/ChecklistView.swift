@@ -11,19 +11,13 @@ import SwiftUI
 
 struct ChecklistView: View {
     //@State var checklistItems = ["Do Capstone Design 1 Homework", "Wash dishes", "Do Capstone Design 2 Homework", "Watch Lecture 11", "Hang Out With Girlfriends", "Watch Lecture 12"]
-    @State var checklistItems = [
-        ChecklistItem(name : "Do Capstone Design 1 Homework", isChecked: false),
-        ChecklistItem(name : "Wash dishes", isChecked: false),
-        ChecklistItem(name : "Do Capstone Design 2 Homework", isChecked: true),
-        ChecklistItem(name : "Watch Lecture 11", isChecked: false),
-        ChecklistItem(name : "Hang Out With Girlfriends", isChecked: true),
-        ChecklistItem(name : "Watch Lecture 11", isChecked: true),
-    ]
+    
+    @ObservedObject var checklist = Checklist()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklistItems){
+                ForEach(checklist.checklistItems){
                     checklistItems in
                     HStack{
                         Text(checklistItems.name)
@@ -32,40 +26,25 @@ struct ChecklistView: View {
                     }
                     .background(Color.white)
                     .onTapGesture {
-                        if let matchingIndex = self.checklistItems.firstIndex(where: {
+                        if let matchingIndex = self.checklist.checklistItems.firstIndex(where: {
                             $0.id == checklistItems.id
                         }){
-                            self.checklistItems[matchingIndex].isChecked.toggle()
+                            self.checklist.checklistItems[matchingIndex].isChecked.toggle()
                         }
-                        self.printChecklistContents()
+                        self.checklist.printChecklistContents()
                         print("The user tapped a list view \(checklistItems.name).")
                     }
                 } //end of foreach
-                .onDelete(perform: deleteListItem)
-                .onMove(perform: moveListItem)
+                    .onDelete(perform: checklist.deleteListItem)
+                    .onMove(perform: checklist.moveListItem)
             } // end of List
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle("CheckList")
                 .onAppear(){
-                    self.printChecklistContents()
+                    self.checklist.printChecklistContents()
             }
         } //navigation end
     } //body end
-    
-    //Method
-    func printChecklistContents(){
-        for item in checklistItems{
-            print(item)
-        }
-    }
-    func deleteListItem(whichElement: IndexSet) {
-        checklistItems.remove(atOffsets: whichElement)
-        printChecklistContents()
-    }
-    func moveListItem(whichElement: IndexSet, destination: Int) {
-        checklistItems.move(fromOffsets: whichElement, toOffset: destination)
-        printChecklistContents()
-    }
 } //contentview end
 
 struct ContentView_Previews: PreviewProvider {
