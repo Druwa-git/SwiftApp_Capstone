@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		3F6598C12663894D002F06AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598C02663894D002F06AF /* AppDelegate.swift */; };
 		3F6598C32663894D002F06AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598C22663894D002F06AF /* SceneDelegate.swift */; };
-		3F6598C52663894D002F06AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598C42663894D002F06AF /* ContentView.swift */; };
+		3F6598C52663894D002F06AF /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598C42663894D002F06AF /* ChecklistView.swift */; };
 		3F6598C726638956002F06AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6598C626638956002F06AF /* Assets.xcassets */; };
 		3F6598CA26638956002F06AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6598C926638956002F06AF /* Preview Assets.xcassets */; };
 		3F6598CD26638956002F06AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6598CB26638956002F06AF /* LaunchScreen.storyboard */; };
+		3F6598D5266BEAB3002F06AF /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6598D4266BEAB3002F06AF /* ChecklistItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F6598BD2663894D002F06AF /* ChecklistV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChecklistV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6598C02663894D002F06AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6598C22663894D002F06AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F6598C42663894D002F06AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3F6598C42663894D002F06AF /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
 		3F6598C626638956002F06AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6598C926638956002F06AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F6598CC26638956002F06AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6598CE26638956002F06AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6598D4266BEAB3002F06AF /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				3F6598C02663894D002F06AF /* AppDelegate.swift */,
 				3F6598C22663894D002F06AF /* SceneDelegate.swift */,
-				3F6598C42663894D002F06AF /* ContentView.swift */,
+				3F6598C42663894D002F06AF /* ChecklistView.swift */,
 				3F6598C626638956002F06AF /* Assets.xcassets */,
 				3F6598CB26638956002F06AF /* LaunchScreen.storyboard */,
 				3F6598CE26638956002F06AF /* Info.plist */,
 				3F6598C826638956002F06AF /* Preview Content */,
+				3F6598D4266BEAB3002F06AF /* ChecklistItem.swift */,
 			);
 			path = ChecklistV1;
 			sourceTree = "<group>";
@@ -148,7 +151,8 @@
 			files = (
 				3F6598C12663894D002F06AF /* AppDelegate.swift in Sources */,
 				3F6598C32663894D002F06AF /* SceneDelegate.swift in Sources */,
-				3F6598C52663894D002F06AF /* ContentView.swift in Sources */,
+				3F6598C52663894D002F06AF /* ChecklistView.swift in Sources */,
+				3F6598D5266BEAB3002F06AF /* ChecklistItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

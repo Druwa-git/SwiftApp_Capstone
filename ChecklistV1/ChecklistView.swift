@@ -7,13 +7,9 @@
 //
 
 import SwiftUI
-struct ChecklistItem: Identifiable {
-    let id = UUID()
-    var name: String
-    var isChecked: Bool = false
-}
 
-struct ContentView: View {
+
+struct ChecklistView: View {
     //@State var checklistItems = ["Do Capstone Design 1 Homework", "Wash dishes", "Do Capstone Design 2 Homework", "Watch Lecture 11", "Hang Out With Girlfriends", "Watch Lecture 12"]
     @State var checklistItems = [
         ChecklistItem(name : "Do Capstone Design 1 Homework", isChecked: false),
@@ -74,6 +70,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ChecklistView()
     }
 }
