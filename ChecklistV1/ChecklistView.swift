@@ -53,7 +53,7 @@ struct ChecklistView: View {
             }
         } //navigation end
         .sheet(isPresented: $newChecklistItemViewIsVisible) {
-                NewChecklistItemView()
+            NewChecklistItemView(checklist: self.checklist)
         }
     } //body end
 } //contentview end
