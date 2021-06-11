@@ -12,13 +12,15 @@ struct NewChecklistItemView: View {
     var body: some View {
         VStack {
             Text("Add new item")
-            Text("Enter item name")
-            Button(action: {}){
-                HStack {
-                    Image(systemName: "plus.circle.fill")
-                    Text("add new item")
-                }//end of HStack
-            }//end of button
+            Form{
+                Text("Enter item name")
+                Button(action: {}){
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                        Text("add new item")
+                    }//end of HStack
+                }//end of button
+            }//end of form
             Text("Swipe down to cancel")
         }//end of vstack
     }//end of body
