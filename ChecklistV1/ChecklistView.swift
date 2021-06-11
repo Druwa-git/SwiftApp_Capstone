@@ -52,6 +52,9 @@ struct ChecklistView: View {
                     self.checklist.printChecklistContents()
             }
         } //navigation end
+        .sheet(isPresented: $newChecklistItemViewIsVisible) {
+                NewChecklistItemView()
+        }
     } //body end
 } //contentview end
 
