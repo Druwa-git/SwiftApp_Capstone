@@ -34,6 +34,12 @@ struct NewChecklistItemView: View {
             }//end of form
             Text("Swipe down to cancel")
         }//end of vstack
+        .onAppear(){
+            print("Appear New")
+        }
+        .onDisappear(){
+            print("Disappear New")
+        }
     }//end of body
 }
 
