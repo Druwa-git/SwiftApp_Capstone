@@ -68,11 +68,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-sF-xOO">
-                                                    <rect key="frame" x="16" y="-7" width="294" height="58"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MWZ-sF-xOO">
+                                                    <rect key="frame" x="16" y="-7" width="304" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="CMW-V0-9Mq" eventType="editingDidEndOnExit" id="Nrd-BU-lpV"/>
+                                                        <outlet property="delegate" destination="CMW-V0-9Mq" id="HoB-oX-qin"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -91,13 +95,14 @@
                                 <action selector="cancel" destination="CMW-V0-9Mq" id="i0g-M0-pKe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="1fD-YG-7Rx">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="1fD-YG-7Rx">
                             <connections>
                                 <action selector="done" destination="CMW-V0-9Mq" id="xt3-ii-ZdQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="1fD-YG-7Rx" id="LCg-l1-x3o"/>
                         <outlet property="textField" destination="MWZ-sF-xOO" id="r8d-EA-CAq"/>
                     </connections>
                 </tableViewController>
