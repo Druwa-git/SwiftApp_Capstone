@@ -10,6 +10,8 @@ import UIKit
 
 class AddItemViewController: UITableViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,10 @@ class AddItemViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
+    }
     // MARK: - Table view data source
 
     @IBAction func cancel() {
@@ -27,9 +33,14 @@ class AddItemViewController: UITableViewController {
     }
     
     @IBAction func done() {
+        print("Contents of the text field: \(textField.text!)")
         navigationController?.popViewController(animated: true)
     }
     
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
